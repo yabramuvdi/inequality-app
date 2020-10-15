@@ -12,6 +12,7 @@ import quantecon as qe
 import time
 from dash.exceptions import PreventUpdate
 import random
+import datetime
 
 # Tutorial: https://dash.plotly.com/layout
 
@@ -320,6 +321,7 @@ def update_tabs(n_clicks,
     if action_id == 'apply-button':
         # ----------------------------
         # 1. Datos
+        print(datetime.datetime.now())
         print('Updating data...')
         # ----------------------------
 
@@ -406,7 +408,8 @@ def update_tabs(n_clicks,
                                         line_color=black))
         # ----------------------------
         # 4. Poverty
-        print('Updating Poverty Measures...')
+        print('Updating Poverty Measures... \n')
+        print('-------------------------------------')
         # ----------------------------
         pobreza_choque = calculo_pobreza(df_shock, 'ING_pc_choque_arriendo')
         texto_pobreza = u'Índice de pobreza choque: {:.2f}%'.format(pobreza_choque)
