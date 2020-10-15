@@ -114,8 +114,9 @@ pobreza_original = calculo_pobreza(df, 'ING_pc_bl_def_arriendo')
 # 2. App Layout
 ################################
 
-app = dash.Dash(__name__)
-server = app.server
+server = flask.Flask(__name__) # define flask app.server
+app = dash.Dash(__name__, server=server)
+
 
 app.config['suppress_callback_exceptions'] = True
 app.layout = html.Div(children=[
@@ -424,4 +425,4 @@ def update_tabs(n_clicks,
 ################################
 
 if __name__ == '__main__':
-    app.run_server(host='0.0.0.0', port=8050, debug=True)
+    app.run_server(debug=True)
