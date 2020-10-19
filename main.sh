@@ -5,5 +5,7 @@ python3 -m pip install -U pip setuptools wheel
 python3 -m pip install -r requirements.txt
 pip3 install gunicorn flask
 
-gunicorn app:server -b :8000
+#gunicorn -w 4 -b :8000 app:server
 #python3 app.py
+
+gunicorn -w 5 --bind :8000 wsgi
