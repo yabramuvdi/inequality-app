@@ -8,4 +8,4 @@ pip3 install gunicorn flask
 #gunicorn -w 4 -b :8000 app:server
 #python3 app.py
 
-gunicorn -w 5 --bind :8000 wsgi
+gunicorn -w 3 --bind localhost:8000 wsgi:application
