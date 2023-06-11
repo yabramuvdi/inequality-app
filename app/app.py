@@ -286,11 +286,11 @@ app.layout = html.Div(children=[
 # Data and Figures update callback
 # ----------------------------
 
-@app.callback([Output('histogram', 'figure'),
+@app.callback(output=[Output('histogram', 'figure'),
                Output('mediana-choque', component_property='children'),
                Output('lorenz', 'figure'),
                Output('pobreza-choque', component_property='children')],
-              [Input('apply-button', 'n_clicks'),
+              inputs=[Input('apply-button', 'n_clicks'),
                Input('reference-lines', 'value')],
               state=[State('sectores', 'value'),
                State('shock', 'value'),
